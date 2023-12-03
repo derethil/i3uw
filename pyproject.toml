@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "i3uw"
+version = "0.1.0"
+description = ""
+authors = ["Jaren Glenn <jaren.glenn@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+i3ipc = "^2.2.1"
+
+[tool.poetry.scripts]
+i3uw = "i3uw.main:start"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
