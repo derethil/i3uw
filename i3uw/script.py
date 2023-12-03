@@ -134,7 +134,4 @@ def start():
     i3.on(Event.WINDOW_NEW, handler)
     i3.on(Event.WINDOW_CLOSE, handler)
 
-    # I will implement this eventually, but not necessary for a single ultra-wide monitor (my use case)
-    # i3.on(Event.WINDOW_MOVE, handler)
-
     i3.main()
