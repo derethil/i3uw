@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import tomllib
+from os import path
 
 
 @dataclass
@@ -30,7 +31,10 @@ class Config:
 def load_config():
     """Load the configuration for i3uw"""
 
-    with open("config.toml", "rb") as f:
+    curr_path = path.dirname(path.realpath(__file__))
+    config_path = path.join(curr_path, "../config.toml")
+
+    with open(config_path, "rb") as f:
         parsed_config = tomllib.load(f)
 
         return Config(
