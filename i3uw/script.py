@@ -5,7 +5,7 @@ from time import sleep
 import logging
 from i3ipc import Connection, Event
 
-import i3uw.config as config
+from i3uw.config import config
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -54,7 +54,7 @@ class Handler:
         focused = self.i3.get_tree().find_focused()
         logging.info("Handling single floating window with name: %s", focused.name)
         self.msg(
-            f"floating enable; resize set {config.size['width']} px {config.size['height']} px; move position {config.position['x']} {config.position['y']}"
+            f"floating enable; resize set {config.size.width} px {config.size.height} px; move position {config.position.x} {config.position.y}"
         )
 
     def on_multiple_window_event(self, event):

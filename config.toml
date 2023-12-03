@@ -1,0 +1,9 @@
+handled_workspaces = [ "browser" ]
+
+[window.size]
+width = 2231
+height = 1366
+
+[window.position]
+x = 18
+y = 54

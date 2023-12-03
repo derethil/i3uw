@@ -10,7 +10,7 @@ python = "^3.11"
 i3ipc = "^2.2.1"
 
 [tool.poetry.scripts]
-i3uw = "i3uw.main:start"
+i3uw = "i3uw.script:start"
 
 [build-system]
 requires = ["poetry-core"]
