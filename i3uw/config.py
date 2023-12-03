@@ -12,19 +12,11 @@ class Coordinates:
 
 
 @dataclass
-class Size:
-    """Configures the size of the floating window"""
-
-    width: int
-    height: int
-
-
-@dataclass
 class Config:
     """i3uw configuration"""
 
     handled_workspaces: list[str]
-    size: Size
+    size: Coordinates
     position: Coordinates
 
 
@@ -38,8 +30,8 @@ def load_config():
         parsed_config = tomllib.load(f)
 
         return Config(
-            handled_workspaces=parsed_config["handled_workspaces"],
-            size=Size(**parsed_config["window"]["size"]),
+            handled_workspaces=parsed_config["main"]["handled_workspaces"],
+            size=Coordinates(**parsed_config["window"]["size"]),
             position=Coordinates(**parsed_config["window"]["position"]),
         )
 

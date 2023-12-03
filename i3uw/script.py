@@ -54,7 +54,7 @@ class Handler:
         focused = self.i3.get_tree().find_focused()
         logging.info("Handling single floating window with name: %s", focused.name)
         self.msg(
-            f"floating enable; resize set {config.size.width} px {config.size.height} px; move position {config.position.x} {config.position.y}"
+            f"floating enable; resize set {config.size.x} px {config.size.y} px; move position {config.position.x} {config.position.y}"
         )
 
     def on_multiple_window_event(self, event):
